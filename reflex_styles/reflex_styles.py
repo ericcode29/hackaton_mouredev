@@ -1,9 +1,11 @@
 from rxconfig import config
 import reflex as rx
 from reflex_styles.style.styles import Color
-from reflex_styles.components.form import form
-from reflex_styles.components.navbar import navbar
+from reflex_styles.pages.form_page import form_page
+from reflex_styles.pages.navbar_page import navbar_page
+from reflex_styles.pages.card_page import card_page
 from reflex_styles.components.card import card
+from reflex_styles.components.navbar import navbar
 
 
 class State(rx.State):
@@ -12,7 +14,33 @@ class State(rx.State):
 
 def index() -> rx.Component:
     return rx.flex(
-        navbar(),
+        rx.flex(
+            rx.link(
+                rx.icon(tag = 'palette'), 
+                href = '/',
+                color = Color.negro_claro.value,
+                _hover = {'color' : Color.verde_medio.value},
+                ),
+            rx.heading('Reflex styles by ',
+                       rx.text.strong('Ericcode29', color = Color.verde_medio.value ), 
+                       align='center',
+                       color = Color.negro_claro.value,
+                       ),
+            rx.link(
+                rx.icon(tag = 'github'),
+                href='https://github.com/ericcode29/hackaton_mouredev',
+                color = Color.negro_claro.value,
+                _hover = {'color' : Color.verde_medio.value},
+                is_external = True
+                ),
+            width = "100%",
+            align='center',
+            justify='center',
+            background_color = Color.verde.value,
+            spacing='4',
+            padding = '1em',
+            position="sticky",
+            ),
         rx.vstack(
         rx.center(
             rx.text.strong('Selecciona tu componente',
@@ -27,16 +55,16 @@ def index() -> rx.Component:
 
         rx.flex(
             rx.link(
-                card('Fromulario', '/formulario.png'),
+                card('Fromulario', '/formulario.png' ),
                 href='/form'
             ),
             rx.link(
-                card('Card'),
-                href='#'
+                card('Card', '/card.png'),
+                href='/card'
             ),
             rx.link(
-                card('NavBar'),
-                href='#'
+                card('NavBar', '/navbar.png'),
+                href='/navbar'
             ),
             direction='row',
             justify='center',
@@ -64,6 +92,8 @@ app = rx.App(
         )
     )
 app.add_page(index)
-app.add_page(form, route='/form' )
+app.add_page(form_page, route='/form' )
+app.add_page(card_page, route='/card')
+app.add_page(navbar_page, route='/navbar')
 
 

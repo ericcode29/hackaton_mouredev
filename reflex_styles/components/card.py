@@ -7,8 +7,9 @@ def card(titulo = '', imagen = '') -> rx.Component:
             titulo,
             rx.image(
                 src = imagen,
-                width = Size.mediano.value,
-                height = 'auto'  
+                width = '300px',
+                height = '300px',
+                border_radius = '10px'   
                 ),
             background_color = Color.gris_claro.value,
             color = Color.verde_claro.value,
