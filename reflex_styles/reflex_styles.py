@@ -5,7 +5,8 @@ from reflex_styles.pages.form_page import form_page
 from reflex_styles.pages.navbar_page import navbar_page
 from reflex_styles.pages.card_page import card_page
 from reflex_styles.components.card import card
-from reflex_styles.components.navbar import navbar
+from reflex_styles.components.navbar_index import navbar_index
+from reflex_styles.components.footer import footer
 
 
 class State(rx.State):
@@ -14,41 +15,28 @@ class State(rx.State):
 
 def index() -> rx.Component:
     return rx.flex(
-        rx.flex(
-            rx.link(
-                rx.icon(tag = 'palette'), 
-                href = '/',
-                color = Color.negro_claro.value,
-                _hover = {'color' : Color.verde_medio.value},
-                ),
-            rx.heading('Reflex styles by ',
-                       rx.text.strong('Ericcode29', color = Color.verde_medio.value ), 
-                       align='center',
-                       color = Color.negro_claro.value,
-                       ),
-            rx.link(
-                rx.icon(tag = 'github'),
-                href='https://github.com/ericcode29/hackaton_mouredev',
-                color = Color.negro_claro.value,
-                _hover = {'color' : Color.verde_medio.value},
-                is_external = True
-                ),
-            width = "100%",
-            align='center',
-            justify='center',
-            background_color = Color.verde.value,
-            spacing='4',
-            padding = '1em',
-            position="sticky",
-            ),
+        navbar_index(),
         rx.vstack(
-        rx.center(
-            rx.text.strong('Selecciona tu componente',
+        rx.flex(
+            rx.text(
+                """
+Bienvenidos a mi propuesta para la haxkaton de MoureDev, una pequeña ayuda para crear tu componentes con Reflex.
+La idea es ahorrar tiempo al escribir código, dando unos componentes predefinidos, los cuales puedes adaptar a tu estilo y gusto posteriormente.
+Aquí debajo van algunos ejemplos. Quizá en un futuro existan más... Quien sabe. 
+Espero que los disfruten y les ayuden a ahorrar tiempo al crear sus ideas.
+""",
+        align='center',
+        size='3',
+        padding = '1em'
+                ),
+            rx.text.strong('Componentes',
                     color = Color.negro_claro.value,
                     align='center',
                     ),
         align='center',
         justify='center',
+        direction='column',
+        spacing='4'
             ),
 
         rx.spacer(),
@@ -75,10 +63,17 @@ def index() -> rx.Component:
         align='center',
 
         ),
+        rx.flex(
+            footer(),
+            justify='end',
+            width = '100%'
+            ),
         height="100vh",
         direction='column',
         background_color = Color.verde_claro.value,
         spacing='4',
+        align='center',
+
         
     )
 

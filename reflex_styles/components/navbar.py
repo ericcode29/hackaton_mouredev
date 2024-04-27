@@ -9,7 +9,7 @@ def navbar(titulo = '', text_strong = '', ref = '#', icon = '')  -> rx.Component
                 color = Color.negro_claro.value,
                 _hover = {'color' : Color.verde_medio.value},
                 ),
-            rx.heading(titulo,#
+            rx.heading(titulo,
                        rx.text.strong(text_strong, color = Color.verde_medio.value ), 
                        align='center',
                        color = Color.negro_claro.value,

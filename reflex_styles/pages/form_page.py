@@ -2,7 +2,7 @@ import reflex as rx
 from reflex_styles.components.navbar import navbar
 from reflex_styles.style.styles import Color, Size
 
-def form_page(titulo = 'Formulario') -> rx.Component: #hay que añadir el codigo bien
+def form_page(titulo = 'Componente formulario') -> rx.Component: #hay que añadir el codigo bien
     return(
         navbar(titulo='Reflex styles by ', 
                text_strong='Ericcode29', 
