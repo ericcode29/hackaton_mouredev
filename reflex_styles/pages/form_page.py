@@ -14,7 +14,9 @@ def form_page(titulo = 'Componente formulario') -> rx.Component: #hay que añadi
                     weight='bold'
                     ),
             rx.card(
-                rx.heading(text = titulo),
+                rx.heading('Formulario',
+                          padding = '1em'  
+                           ),
                 rx.vstack(
                     rx.input(placeholder='Nombre', type='text', size='2', width = Size.mediano.value),
                     rx.input(placeholder='Apellido', type='text', size='2', width = Size.mediano.value),

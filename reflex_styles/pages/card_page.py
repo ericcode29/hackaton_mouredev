@@ -20,7 +20,7 @@ def card_page() -> rx.Component:
 
             rx.code_block(
                 """
-def card(titulo = '', imagen = '') -> rx.Component:
+def card(titulo = '', imagen = '', background = '', color = '') -> rx.Component:
     return(
         rx.card(
             titulo,
@@ -30,9 +30,9 @@ def card(titulo = '', imagen = '') -> rx.Component:
                 height = '300px',
                 border_radius = '10px'   
                 ),
-            background_color = Color.gris_claro.value,
-            color = Color.verde_claro.value,
-            _hover = {'color':Color.verde_base.value}
+            background_color = background,
+            color = color,
+            _hover = {'color': 'white'}
             ),
             
         )

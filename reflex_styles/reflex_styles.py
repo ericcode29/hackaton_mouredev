@@ -4,6 +4,7 @@ from reflex_styles.style.styles import Color
 from reflex_styles.pages.form_page import form_page
 from reflex_styles.pages.navbar_page import navbar_page
 from reflex_styles.pages.card_page import card_page
+from reflex_styles.pages.login_page import login_page
 from reflex_styles.components.card import card
 from reflex_styles.components.navbar_index import navbar_index
 from reflex_styles.components.footer import footer
@@ -20,7 +21,7 @@ def index() -> rx.Component:
         rx.flex(
             rx.text(
                 """
-Bienvenidos a mi propuesta para la haxkaton de MoureDev, una pequeña ayuda para crear tu componentes con Reflex.
+Bienvenidos a mi propuesta para la hackaton de MoureDev, una pequeña ayuda para crear tu componentes con Reflex.
 La idea es ahorrar tiempo al escribir código, dando unos componentes predefinidos, los cuales puedes adaptar a tu estilo y gusto posteriormente.
 Aquí debajo van algunos ejemplos. Quizá en un futuro existan más... Quien sabe. 
 Espero que los disfruten y les ayuden a ahorrar tiempo al crear sus ideas.
@@ -47,8 +48,8 @@ Espero que los disfruten y les ayuden a ahorrar tiempo al crear sus ideas.
                 href='/form'
             ),
             rx.link(
-                card('Card', '/card.png'),
-                href='/card'
+                card('LogIn', '/login.png'),
+                href='/login'
             ),
             rx.link(
                 card('NavBar', '/navbar.png'),
@@ -90,5 +91,6 @@ app.add_page(index)
 app.add_page(form_page, route='/form' )
 app.add_page(card_page, route='/card')
 app.add_page(navbar_page, route='/navbar')
+app.add_page(login_page, route = '/login')
 
 
