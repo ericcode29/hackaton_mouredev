@@ -18,8 +18,9 @@ def index() -> rx.Component:
     return rx.flex(
         navbar_index(),
         rx.vstack(
-        rx.flex(
-            rx.text(
+        rx.grid(
+            rx.flex(
+                rx.text(
                 """
 Bienvenidos a mi propuesta para la hackaton de MoureDev, una pequeña ayuda para crear tu componentes con Reflex.
 La idea es ahorrar tiempo al escribir código, dando unos componentes predefinidos, los cuales puedes adaptar a tu estilo y gusto posteriormente.
@@ -30,36 +31,60 @@ Espero que los disfruten y les ayuden a ahorrar tiempo al crear sus ideas.
         size='3',
         padding = '1em'
                 ),
+                width='50%',
+                direction='column',
+                align='center',
+                justify='center'
+                ),
+            
+        rx.box(
             rx.text.strong('Componentes',
                     color = Color.negro_claro.value,
                     align='center',
                     ),
+            rx.grid(
+                rx.link(
+                    card('Fromulario', '/formulario.png' ),
+                    href='/form'
+                ),
+                rx.link(
+                    card('LogIn', '/login.png'),
+                    href='/login'
+                ),
+                rx.link(
+                    card('NavBar', '/navbar.png'),
+                    href='/navbar'
+                ),
+            columns='2',
+            align='center',
+            justify='center',
+            spacing='3',
+            ),
+            ),
         align='center',
         justify='center',
-        direction='column',
-        spacing='4'
+        columns='2',
+        spacing='4',
             ),
 
-        rx.spacer(),
-
-        rx.flex(
-            rx.link(
-                card('Fromulario', '/formulario.png' ),
-                href='/form'
-            ),
-            rx.link(
-                card('LogIn', '/login.png'),
-                href='/login'
-            ),
-            rx.link(
-                card('NavBar', '/navbar.png'),
-                href='/navbar'
-            ),
-            direction='row',
-            justify='center',
-            align='center',
-            spacing='4',
-            ),
+        # rx.flex(
+        #     rx.link(
+        #         card('Fromulario', '/formulario.png' ),
+        #         href='/form'
+        #     ),
+        #     rx.link(
+        #         card('LogIn', '/login.png'),
+        #         href='/login'
+        #     ),
+        #     rx.link(
+        #         card('NavBar', '/navbar.png'),
+        #         href='/navbar'
+        #     ),
+        #     direction='row',
+        #     justify='center',
+        #     align='center',
+        #     spacing='4',
+        #     ),
         justify='center',
         align='center',
 
@@ -69,7 +94,7 @@ Espero que los disfruten y les ayuden a ahorrar tiempo al crear sus ideas.
             justify='end',
             width = '100%'
             ),
-        height="100vh",
+        height="100%",
         direction='column',
         background_color = Color.verde_claro.value,
         spacing='4',
