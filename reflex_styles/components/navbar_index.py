@@ -15,12 +15,19 @@ def navbar_index() -> rx.Component:
                        align='center',
                        color = Color.negro_claro.value,
                        ),
-            rx.link(
-                rx.icon(tag = 'file-stack'),
-                href='#',
-                color = Color.negro_claro.value,
-                _hover = {'color': Color.verde_medio.value},
-                is_external=False
+            rx.hover_card.root(
+                rx.hover_card.trigger(
+                    rx.link(
+                        rx.icon(tag = 'file-stack'),
+                        href='/components',
+                        color = Color.negro_claro.value,
+                        _hover = {'color': Color.verde_medio.value},
+                        is_external=False
+                        ),
+                    ),
+                rx.hover_card.content(
+                    rx.text('Componentes')
+                    ),
                 ),
             rx.link(
                 rx.icon(tag = 'github'),

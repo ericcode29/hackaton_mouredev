@@ -5,7 +5,7 @@ from reflex_styles.style.styles import Color, Size
 
 def card_page() -> rx.Component:
     return (
-        navbar(titulo='Reflex styles by ', 
+        navbar(titulo='Reflex components by ', 
                text_strong='Ericcode29', 
                ref='/', 
                icon='palette'),

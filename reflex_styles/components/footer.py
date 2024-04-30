@@ -6,7 +6,7 @@ def footer() -> rx.Component:
         navbar(
             'Todos los derechos reservados ',
             'Ericcode29',
-            '#',
+            'https://github.com/ericcode29/hackaton_mouredev',
             'github'
             )
 
