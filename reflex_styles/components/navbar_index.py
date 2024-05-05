@@ -38,5 +38,5 @@ def navbar_index() -> rx.Component:
             background_color = Color.verde.value,
             spacing='4',
             padding = '1em',
-            position="sticky",
+            #position="sticky",
             ),

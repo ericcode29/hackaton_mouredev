@@ -9,10 +9,18 @@ def form_page(titulo = 'Componente formulario') -> rx.Component: #hay que añadi
                ref='/', 
                icon='palette'),
         rx.flex(
-            rx.text(titulo,
+            rx.flex(
+                rx.link(
+                    rx.icon(tag = 'arrow-left'),
+                    href='/components',
+                    ),
+                rx.text(titulo,
                     size='5',
                     weight='bold'
                     ),
+                direction='row',
+                spacing='4',
+                ),
             rx.card(
                 rx.heading('Formulario',
                           padding = '1em'  
@@ -71,7 +79,9 @@ def form(titulo = 'Formulario') -> rx.Component:
 """,
                     language = "python",
                     auto_height = True,
-                    can_copy = True
+                    can_copy = True,
+                    width = "100%",
+                    wrap_long_lines = True,
                     ),
                 height = '100%',
                 spacing='4',

@@ -10,12 +10,18 @@ def card_page() -> rx.Component:
                ref='/', 
                icon='palette'),
         rx.flex(
-            rx.text('Componente Card',
-                    color = Color.negro_claro.value,
-                    size = '5',
-                    weight = 'bold',
-                    padding = '1em'
+            rx.flex(
+                rx.link(
+                    rx.icon(tag = 'arrow-left'),
+                    href='/components',
                     ),
+                rx.text('Componente Card',
+                    size='5',
+                    weight='bold'
+                    ),
+                direction='row',
+                spacing='4',
+                ),
             card('Card', '/card.png'),
 
             rx.code_block(
@@ -41,12 +47,15 @@ def card(titulo = '', imagen = '', background = '', color = '') -> rx.Component:
                 language = 'python',
                 can_copy = True,
                 auto_height = True,
+                width = '100%',
+                wrap_long_lines = True,
                 ),
 
             height = '100%',
             background_color = Color.verde_claro.value,
             direction = 'column',
             align = 'center',
+            padding_top = '1em',
             spacing = '4'
             )
         )

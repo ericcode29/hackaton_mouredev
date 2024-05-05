@@ -1,6 +1,6 @@
 from rxconfig import config
 import reflex as rx
-from reflex_styles.style.styles import Color
+from reflex_styles.style.styles import Color, BASE_STYLE
 from reflex_styles.pages.form_page import form_page
 from reflex_styles.pages.navbar_page import navbar_page
 from reflex_styles.pages.card_page import card_page
@@ -52,12 +52,24 @@ Espero que los disfruten y les ayuden a ahorrar tiempo al crear sus ideas.
                 card('LogIn', '/login.png'),
                 href='/login',
             ),
+            rx.button(
+                rx.link(
+                    'Ver más componentes',
+                    href='/components',
+                    padding = '1em'
+                    ),
+                width = '100%',
+                height = "auto",
+                aling = 'center',
+                justify = 'center'
+                ),
             columns='1',
             align='center',
             justify='center',
             spacing='4',
             margin = '2em'
             ),
+            
         align='center',
         justify='center',
         columns='2',
@@ -71,23 +83,22 @@ Espero que los disfruten y les ayuden a ahorrar tiempo al crear sus ideas.
             footer(),
             width = '100%',
             ),
-        height="100%",
         direction='column',
-        background_color = Color.verde_claro.value,
         spacing='4',
         align='center',
+        flex_wrap='wrap'
 
         
     )
 
 
 app = rx.App(
-    background_color = Color.verde_claro.value,
     theme = rx.theme( 
-        has_background = True,
+        has_background = False,
         radius = 'full',
         accent_color = 'lime',
-        )
+        ),
+    style=BASE_STYLE,
     )
 app.add_page(index)
 app.add_page(form_page, route='/form' )

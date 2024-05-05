@@ -10,11 +10,17 @@ def navbar_page() -> rx.Component:
                ref='/', 
                icon='palette'),
         rx.flex(
-            rx.text('Componente NavBar',
+            rx.flex(
+                rx.link(
+                    rx.icon(tag = 'arrow-left'),
+                    href='/components',
+                    ),
+                rx.text('Componente NavBar',
                     size='5',
-                    weight='bold',
-                    color = Color.negro_claro.value,
-                    padding = '1em',
+                    weight='bold'
+                    ),
+                direction='row',
+                spacing='4',
                 ),
                 card(imagen = '/navbar.png'),
 
@@ -43,6 +49,8 @@ def navbar(titulo = '', text_strong = '', ref = '#', icon = '', color = 'white')
                     language='python',
                     can_copy=True,
                     auto_height = True,
+                    width = '100%',
+                    wrap_long_lines = True,
                     ),
 
             height = '100%',
@@ -50,5 +58,6 @@ def navbar(titulo = '', text_strong = '', ref = '#', icon = '', color = 'white')
             align = 'center',
             spacing = '4',
             direction = 'column', 
+            padding_top = '1em',
             )
         )

@@ -10,8 +10,18 @@ def login_page() -> rx.Component:
                ref='/', 
                icon='palette'),
         rx.flex(
-            rx.text.strong('Componente LogIn',
-                           padding = '1em'),
+            rx.flex(
+                rx.link(
+                    rx.icon(tag = 'arrow-left'),
+                    href='/components',
+                    ),
+                rx.text('Componente LogIn',
+                    size='5',
+                    weight='bold'
+                    ),
+                direction='row',
+                spacing='4',
+                ),
             login(),
 
             rx.code_block(
@@ -63,7 +73,9 @@ def login() -> rx.Component:
 """,
             language = "python",
             auto_height = True,
-            can_copy = True
+            can_copy = True,
+            width = '100%',
+            wrap_long_lines = True,
             ),
 
 
@@ -72,6 +84,7 @@ def login() -> rx.Component:
             align='center',
             height = '100%',
             width = '100%',
+            padding_top = '1em',
             background_color = Color.verde_claro.value
             ),
 

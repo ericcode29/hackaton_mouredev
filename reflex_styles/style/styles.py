@@ -23,3 +23,13 @@ class Size(Enum):
     lg = '62em',
     xl = '80em',
     xxl = '96em',
+
+BASE_STYLE = {
+    "background-color":Color.verde_claro.value,
+    "height":"100%",
+
+    "body":{
+        "background-color":Color.verde_claro.value,
+        "width":"100%"
+        },
+    }
